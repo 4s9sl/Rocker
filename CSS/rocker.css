@@ -74,34 +74,40 @@ header .container .logo {
 @media (max-width: 767px) {
     header .container .logo {
         height: 80px;
-        justify-content: start;
     }
 }
-header .container .logo img {
-
+@media (min-width: 767px) And (max-width: 991px) {
+    header .container .logo {
+        margin: auto;
+    }
 }
+/* header .container .logo img {
+
+} */
 @media (max-width: 767px) {
     header .container .logo img {
         width: 150px;
     }
-}
-header .container nav {
-
 }
 @media (max-width: 767px) {
     header .container nav{
         display: none;
     }
 }
+@media (min-width: 767px) And (max-width: 991px) {
+    header .container nav{
+        margin-bottom: 30px;
+    }
+}
 header .container  ul {
     display: flex;
     flex-wrap: wrap;
 }
-header .container nav ul > li > a{
+header .container nav ul li a{
     text-decoration: none;
     color: var(--main-color);
 }
-header .container nav ul li {
+header .container nav ul > li {
     position: relative;
     margin-left: 10px;
     padding: 10px 15px;
@@ -113,6 +119,12 @@ header .container nav ul li {
         margin-left: 5px;
         padding: 5px 10px;
         font-size: 12px;
+    }
+}
+@media (min-width: 767px) And (max-width: 991px) {
+    header .container nav ul li {
+        margin-left: 10px;
+        padding: 5px 10px;
     }
 }
 header .container nav ul li::before {
@@ -148,16 +160,34 @@ header .container nav ul li:hover::after {
 }
 header .container .icons{
     position: relative;
-
+    margin-right: 15px;
 }
-@media (max-width: 767px) {
+@media (min-width: 767px) And (max-width: 991px) {
     header .container .icons{
-        
+        position: absolute;
+        right: 50px;
+        margin-bottom: 50px;
+    }
+}
+@media (min-width: 992px) And (max-width: 1199px) {
+    header .container {
+        display: flex;
+        justify-content: center;
+    }
+    header .container .icons{
+        order: 2;
+    }
+    header .container nav {
+        order: 3;
+        margin: 0 auto 30px;
+    }
+    header .container .logo {
+        order: 1;
     }
 }
 header .container .icons a{
     text-decoration: none;    
-    /* margin-right: 20px;*/
+    /* margin-right: 20px; */
     padding: 10px 10px;
     color: black;
     position: relative;
@@ -221,32 +251,87 @@ header .container .list {
     display: none;
 }
 @media (max-width: 767px) {
+    header .container .icons {
+        position: absolute;
+        right: 65px;
+    }
     header .container .line-list {
         position: relative;
     }
-    header .container .lines {
+    header .container .line-list .lines {
         display: flex;
         flex-wrap: wrap;
         justify-content: end;
         width: 30px;
+        right: 100px;
+        right: 0;
+        position: absolute;
     }
-    header .container .lines span {
+    header .container .line-list .lines span {
         display: block;
         height: 1px;
         width: 100%;
         margin-bottom: 5px;
         background-color: black;
     }   
-    header .container .lines .active {
+    header .container .line-list .lines .active {
         width: 60%;
         transition: 0.3s ease;
     }    
-    header .container .lines:hover .active{
+    header .container .line-list .lines:hover .active{
         width: 100%;
-    }
+    }   
     
 }
 /* End Header */
+
+/* Start mega-munu */
+header .container nav ul .furn {
+    position: relative;
+    z-index: 100;
+}
+header .container nav ul .pre {
+    perspective: 200px;
+    position: absolute;
+    top: calc(100% + 30px);
+    left: 0;
+}
+header .container nav ul .mega-menu {
+    position: absolute;
+    padding: 20px;
+    display: flex;
+    background-color: white;
+    border: 2px solid var(--main-color);
+    z-index: 100;
+    gap: 40px;
+    transition: 1s;
+    transform:  rotateY(90deg)  translateX(-50px) scale(0);
+    transform-origin: left center;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+}
+header .container nav ul .furn:hover .mega-menu {
+    transform: rotateY(0deg) translateX(0px);
+
+}
+header .container nav ul .mega-menu .links {
+    padding: 0  ;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+header .container nav ul .mega-menu .links .active {
+    color: var(--transperant-color);
+    text-transform: capitalize;
+    
+}
+header .container nav ul .mega-menu .links > li {
+    color: var(--main-color);
+    margin-bottom: 15px;
+    text-transform: capitalize;
+    
+}
+/* End mega-munu */
 
 /* Start Landing */
 .landing {
@@ -261,7 +346,7 @@ header .container .list {
 }
 .landing .image img{
     width: 100%;
-    /* max-width: 100%; */
+    max-width: 100%;
 }
 .landing .image a {
     display: block;
