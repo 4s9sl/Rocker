@@ -152,7 +152,7 @@ header .container .icons{
 }
 @media (max-width: 767px) {
     header .container .icons{
-        margin-right: 60px;   
+        
     }
 }
 header .container .icons a{
@@ -216,6 +216,35 @@ header .container .icons .bag span {
         bottom: 3px;
         font-size: 8px;
     }
+}
+header .container .list {
+    display: none;
+}
+@media (max-width: 767px) {
+    header .container .line-list {
+        position: relative;
+    }
+    header .container .lines {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: end;
+        width: 30px;
+    }
+    header .container .lines span {
+        display: block;
+        height: 1px;
+        width: 100%;
+        margin-bottom: 5px;
+        background-color: black;
+    }   
+    header .container .lines .active {
+        width: 60%;
+        transition: 0.3s ease;
+    }    
+    header .container .lines:hover .active{
+        width: 100%;
+    }
+    
 }
 /* End Header */
 
