@@ -81,16 +81,13 @@ header .container .logo {
         margin: auto;
     }
 }
-/* header .container .logo img {
-
-} */
 @media (max-width: 767px) {
     header .container .logo img {
         width: 150px;
     }
 }
 @media (max-width: 767px) {
-    header .container nav{
+    header .container nav ul{
         display: none;
     }
 }
@@ -247,16 +244,59 @@ header .container .icons .bag span {
         font-size: 8px;
     }
 }
-header .container .list {
-    display: none;
+.toggle-menu {
+    font-size: 22px;
+    color: black;
+    margin-right: 10px;
+    height: 100%;
+}
+@media (min-width: 768px) {
+    .toggle-menu {
+        display: none;
+    }
 }
 @media (max-width: 767px) {
     header .container .icons {
         position: absolute;
         right: 65px;
     }
-    header .container .line-list {
+    header .container nav .toggle-menu:hover + ul {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        position: absolute;
+        left: 0;
+        top: calc(100% + 1px);
+        z-index: 100;
+        background-color: rgba(255, 255, 255, 0.712);
+        padding: 20px;
+    }
+    header .container nav .toggle-menu:hover + ul li {
+        padding: 5px 10px;
+        margin-bottom: 20px;
+    }
+    header .container nav .toggle-menu:hover + ul .furn .pre {
+        position: absolute;
+        top: calc(100% + 20px);
+        left: -200%;
+    }
+    header .container nav .toggle-menu:hover + ul .furn .pre .mega-menu{
+        position: absolute;
+        padding: 10px;
+        display: flex;
+        flex-direction: row;
+        gap: 5px;
+    }
+    header .container nav .toggle-menu:hover + ul .furn .pre .mega-menu .links > li {
         position: relative;
+        min-width: 100px;
+    }
+    /* header .container .line-list {
+        position: relative;
+        left: 0;
     }
     header .container .line-list .lines {
         display: flex;
@@ -280,8 +320,8 @@ header .container .list {
     }    
     header .container .line-list .lines:hover .active{
         width: 100%;
-    }   
-    
+    }    */
+
 }
 /* End Header */
 
@@ -316,7 +356,7 @@ header .container nav ul .furn:hover .mega-menu {
     transform: rotateY(0deg) translateX(0px);
 }
 header .container nav ul .mega-menu .links {
-    padding: 0  ;
+    padding: 0;
     display: flex;
     justify-content: center;
     text-align: center;
@@ -344,6 +384,9 @@ header .container nav ul .mega-menu .links > li:not(.active)::before {
     top: 0;
     transition: 0.3s;
     z-index: -1;
+} 
+header .container nav ul .mega-menu .links > li:not(.active):hover{
+    margin-left: 1px;
 }
 header .container nav ul .mega-menu .links > li:not(.active):hover::before {
     width: 100%;
